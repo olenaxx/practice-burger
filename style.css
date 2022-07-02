@@ -219,4 +219,55 @@ nav .container {
     nav.open .links {
       transform: translateX(0);
     }
+
+
+        .hamburger-menu .dots {
+          position: relative;
+          width: 6px;
+          height: 6px;
+          background-color: #252525;
+          border-radius: 50%;
+          cursor: pointer;
+          transition: .5s;
+        }
+        
+        .dots::before,
+        .dots::after {
+          position: absolute;
+          content: '';
+          width: 6px;
+          height: 6px;
+          background-color: #252525;
+          border-radius: 50%;
+          cursor: pointer;
+          transition: .5s;
+        }
+
+        .dots::before {
+          transform: translateY(-9px);
+        }
+
+        .dots::after {
+          transform: translateY(9px);
+        }
+
+        nav.open .hamburger-menu .dots {
+          background-color: transparent;
+        }
+
+        nav.open .hamburger-menu .dots::after {
+          width: 2rem;
+          height: 3px;
+          border-radius: 0;
+          transform: translateY(0) rotate(45deg);
+          background-color: #fff;
+        }
+
+        nav.open .hamburger-menu .dots::before {
+          width: 2rem;
+          height: 3px;
+          border-radius: 0;
+          transform: translateY(0) rotate(-45deg);
+          background-color: #fff;
+        }
 }
