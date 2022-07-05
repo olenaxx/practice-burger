@@ -81,3 +81,37 @@ next.addEventListener('click', nextSlide)
 prev.addEventListener('click', prevSlide)
 
 // setInterval(nextSlide, 2500)
+
+/*------------------  carousel --------------------*/
+
+let items = document.querySelectorAll('.item')
+let currentItem = 0;
+isEnabled = true;
+
+function changeCurrentItem(n) {
+  currentItem = (n + item.length) % item.length;
+}
+
+function previousItem(n) {
+  changeCurrentItem(n-1)
+}
+
+function nextItem(n) {
+  changeCurrentItem(n-1)
+}
+
+document.querySelector('.control.left').addEventListener('click', function () {
+  // changeCurrentItem(currentItem - 1);
+  if (isEnabled) {
+    previousItem(currentItem)
+  }
+})
+
+document.querySelector('.control.right').addEventListener('click', function () {
+  // changeCurrentItem(currentItem - 1);
+  if (isEnabled) {
+    nextItem(currentItem)
+  }
+})
+
+// 42.28 https://www.youtube.com/watch?v=rkz6LURkbBw
